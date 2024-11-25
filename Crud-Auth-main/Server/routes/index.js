@@ -21,7 +21,7 @@ router.get('/home', function(req, res, next) {
 
 /* GET contactus page. */
 router.get('/contactus', function(req, res, next) {
-  res.render('contactus', { title: 'Contact Us',
+  res.render('Contact/contactus', { title: 'Contact Us',
     displayName: req.user ? req.user.displayName:''
    });
 });
@@ -56,7 +56,7 @@ router.post('/login', function(req,res,next){
       {
         return next(err)
       }
-      return res.redirect('/bookslist')
+      return res.redirect('/events')
     })
   })(req,res,next)
 })

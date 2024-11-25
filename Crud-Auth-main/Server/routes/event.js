@@ -17,11 +17,11 @@ function requireAuth(req,res,next)
 
 router.get('/',async(req,res,next)=>{
 try{
-    const events= await Event.find(); //Fetch all events
+    const events = await Event.find(); // Fetch all events
     res.render('Event/list', {
-        title:'Event List',
-        displayName: req.user?req.user.displayName:'',
-        events: events // Passing the events to the view
+        title: 'Event List', // Ensure title is passed
+        displayName: req.user ? req.user.displayName : '',
+        events, // Pass the fetched events
 
     })}
     catch(err){
